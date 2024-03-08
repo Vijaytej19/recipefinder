@@ -4,7 +4,7 @@ import Search from './Components/Search'
 import Nav from './Components/Nav'
 import Container from './Components/Container'
 import InnerContainer from './Components/InnerContainer'
-import FoodList from './Components/FoodList'
+import FoodList from "./components/FoodList";
 import FoodDetails from './Components/FoodDetails'
 
 function App() {
