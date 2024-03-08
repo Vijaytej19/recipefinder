@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Search from './Components/Search'
+import Nav from './Components/Nav'
+import Container from './Components/Container'
+import InnerContainer from './Components/InnerContainer'
+import FoodList from './Components/FoodList'
+import FoodDetails from './Components/FoodDetails'
 
 function App() {
+  const [foodData, setFoodData] = useState([]);
+  const [foodId,setFoodId] = useState("656329")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <Search foodData={foodData} setFoodData={setFoodData} />
+      <Container>
+        <InnerContainer>
+          <FoodList foodData={foodData} setFoodId={setFoodId}/>
+        </InnerContainer>
+        <InnerContainer>
+          <FoodDetails foodId={foodId}/>
+        </InnerContainer>
+      </Container>
     </div>
   );
 }
